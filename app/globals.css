@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #15181d;
+  --surface: #1d2127;
+  --surface-2: #262b33;
+  --amber: #e8a33d;
+  --teal: #4f9d9d;
+  --cream: #edeae3;
+  --muted: #8b8f98;
+  --velvet: #9c3b3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+body {
+  font-family: 'Source Serif 4', serif;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-display {
+  font-family: 'Big Shoulders Display', sans-serif;
+}
+
+.font-mono-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The signature element: a torn ticket-stub badge for scores. */
+.ticket-badge {
+  --badge-color: var(--amber);
+  --notch-bg: var(--surface);
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  padding: 0.5rem 0.9rem;
+  border: 1.5px dashed var(--badge-color);
+  border-radius: 4px;
+  background: var(--surface);
+}
+
+.ticket-badge--guest {
+  --badge-color: var(--teal);
+}
+
+.ticket-badge::before,
+.ticket-badge::after {
+  content: '';
+  position: absolute;
+  width: 0.65rem;
+  height: 0.65rem;
+  background: var(--notch-bg);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ticket-badge::before {
+  left: -0.325rem;
+}
+
+.ticket-badge::after {
+  right: -0.325rem;
+}
+
+.ticket-badge-score {
+  font-family: 'IBM Plex Mono', monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--badge-color);
+  line-height: 1;
+}
+
+.ticket-badge-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.marquee-rule {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+}
+
+.rank-numeral {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--amber);
+  line-height: 0.8;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 2px solid var(--ink);
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 2px solid var(--ink);
+  cursor: pointer;
+}
