@@ -72,7 +72,7 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
           ) : null}
 
           <div className="flex gap-3 mt-5">
-            <TicketBadge score={Number(movie.curator_score)} label="My score" variant="curator" />
+            <TicketBadge score={Number(movie.curator_score)} label="E's score" variant="curator" />
             {guestAvg !== null ? (
               <TicketBadge
                 score={guestAvg}
