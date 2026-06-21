@@ -63,7 +63,7 @@ export default function MovieCard({
       </div>
 
       <div className="flex items-center gap-3 shrink-0">
-        <TicketBadge score={curatorScore} label="Mine" variant="curator" />
+        <TicketBadge score={curatorScore} label="E's score" variant="curator" />
         {guestAvg !== null ? (
           <TicketBadge score={guestAvg} label={`${guestCount} guest${guestCount === 1 ? '' : 's'}`} variant="guest" />
         ) : null}
