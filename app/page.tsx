@@ -48,17 +48,10 @@ export default async function HomePage({
   return (
     <main className="max-w-5xl mx-auto px-6">
       <header className="pt-16 pb-10 text-center">
-        <p className="font-mono-num text-xs uppercase tracking-[0.3em] text-muted mb-3">
-          One curator. No committee.
-        </p>
         <h1 className="font-display italic text-5xl md:text-7xl tracking-wide text-cream">
-          THE RANKINGS
+          E&apos;s Movie Rankings
         </h1>
         <div className="marquee-rule w-40 mx-auto my-6" />
-        <p className="text-muted max-w-md mx-auto">
-          Every film here has been watched, scored, and filed by one person. Add your own score
-          underneath any title -- no account required.
-        </p>
       </header>
 
       <div className="flex justify-center mb-10">
