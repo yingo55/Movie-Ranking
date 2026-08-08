@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function SortToggle({ active }: { active: 'curator' | 'guests' }) {
+export default function SortToggle({ active }: { active: 'curator' | 'guests' | 'genre' }) {
   const baseClasses =
     'px-3 py-1.5 text-sm font-mono-num uppercase tracking-wide rounded-sm transition-colors';
   return (
@@ -20,6 +20,14 @@ export default function SortToggle({ active }: { active: 'curator' | 'guests' })
         }`}
       >
         Guest favorites
+      </Link>
+      <Link
+        href="/?sort=genre"
+        className={`${baseClasses} ${
+          active === 'genre' ? 'bg-amber text-ink' : 'text-muted hover:text-cream'
+        }`}
+      >
+        By genre
       </Link>
     </div>
   );
